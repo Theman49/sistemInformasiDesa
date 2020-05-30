@@ -1,6 +1,7 @@
 #pragma once
 #include "loginAdmin.h"
 #include "menuPublic.h"
+#include "editDataWarga.h"
 namespace projectAkhirSTD {
 
 	using namespace System;
@@ -88,15 +89,18 @@ namespace projectAkhirSTD {
 			this->btnAdmin->BackColor = System::Drawing::Color::Transparent;
 			this->btnAdmin->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnAdmin->FlatAppearance->BorderColor = System::Drawing::Color::MediumPurple;
-			this->btnAdmin->FlatAppearance->BorderSize = 10;
+			this->btnAdmin->FlatAppearance->BorderSize = 0;
 			this->btnAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnAdmin->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnAdmin->Location = System::Drawing::Point(149, 204);
+			this->btnAdmin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAdmin.Image")));
+			this->btnAdmin->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->btnAdmin->Location = System::Drawing::Point(133, 205);
 			this->btnAdmin->Name = L"btnAdmin";
-			this->btnAdmin->Size = System::Drawing::Size(109, 103);
+			this->btnAdmin->Size = System::Drawing::Size(136, 103);
 			this->btnAdmin->TabIndex = 1;
 			this->btnAdmin->Text = L"Admin";
+			this->btnAdmin->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->btnAdmin->UseVisualStyleBackColor = false;
 			this->btnAdmin->Click += gcnew System::EventHandler(this, &loginAwal::btnAdmin_Click);
 			// 
@@ -105,15 +109,18 @@ namespace projectAkhirSTD {
 			this->btnPublic->BackColor = System::Drawing::Color::Transparent;
 			this->btnPublic->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->btnPublic->FlatAppearance->BorderColor = System::Drawing::Color::MediumPurple;
-			this->btnPublic->FlatAppearance->BorderSize = 10;
+			this->btnPublic->FlatAppearance->BorderSize = 0;
 			this->btnPublic->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnPublic->Font = (gcnew System::Drawing::Font(L"Times New Roman", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btnPublic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPublic.Image")));
+			this->btnPublic->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->btnPublic->Location = System::Drawing::Point(301, 204);
 			this->btnPublic->Name = L"btnPublic";
-			this->btnPublic->Size = System::Drawing::Size(109, 103);
+			this->btnPublic->Size = System::Drawing::Size(136, 103);
 			this->btnPublic->TabIndex = 2;
 			this->btnPublic->Text = L"Public";
+			this->btnPublic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->btnPublic->UseVisualStyleBackColor = false;
 			this->btnPublic->Click += gcnew System::EventHandler(this, &loginAwal::btnPublic_Click);
 			// 
@@ -128,8 +135,9 @@ namespace projectAkhirSTD {
 			// 
 			// exitToolStripMenuItem
 			// 
+			this->exitToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem.Image")));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(38, 20);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(54, 20);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &loginAwal::exitToolStripMenuItem_Click);
 			// 
@@ -139,11 +147,15 @@ namespace projectAkhirSTD {
 			this->label2->BackColor = System::Drawing::Color::White;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(414, 4);
+			this->label2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label2.Image")));
+			this->label2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->label2->Location = System::Drawing::Point(383, 3);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(135, 13);
+			this->label2->Size = System::Drawing::Size(164, 17);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"Sistem Informasi Desa v1.0";
+			this->label2->Text = L"         Sistem Informasi Desa v1.0";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->label2->UseCompatibleTextRendering = true;
 			// 
 			// loginAwal
 			// 
@@ -159,11 +171,13 @@ namespace projectAkhirSTD {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
 			this->Name = L"loginAwal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sistem Informasi Desa v1.0";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginAwal::loginAwal_FormClosing);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -173,16 +187,25 @@ namespace projectAkhirSTD {
 #pragma endregion
 	private: System::Void btnAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		loginAdmin^ logAdm = gcnew loginAdmin();
+		loginAdmin^ logAdm = gcnew loginAdmin(this);
 		logAdm->ShowDialog();
 	}
 	private: System::Void btnPublic_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		menuPublic^ menuPbl = gcnew menuPublic();
+		menuPublic^ menuPbl = gcnew menuPublic(this);
 		menuPbl->ShowDialog();
 	}
 private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
+}
+private: System::Void loginAwal_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	if (MessageBox::Show("Apakah anda yakin keluar?", "Menu Public", MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+		== System::Windows::Forms::DialogResult::Yes) {
+		Application::Exit();
+	}
+	else {
+		e->Cancel = true;
+	}
 }
 };
 }

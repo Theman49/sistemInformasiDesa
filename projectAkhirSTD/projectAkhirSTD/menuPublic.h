@@ -16,6 +16,7 @@ namespace projectAkhirSTD {
 	public ref class menuPublic : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ home;
 		menuPublic(void)
 		{
 			InitializeComponent();
@@ -25,6 +26,18 @@ namespace projectAkhirSTD {
 			//
 
 			
+		}
+		menuPublic(Form^ menuPublic)
+		{
+			home = menuPublic;
+			InitializeComponent();
+			timer1->Start();
+			
+			//
+			//TODO: Add the constructor code here
+			//
+
+
 		}
 
 	protected:
@@ -57,6 +70,7 @@ namespace projectAkhirSTD {
 
 	private: System::Windows::Forms::Label^ label_pengirim;
 	private: System::Windows::Forms::ComboBox^ list_pengirim;
+	private: System::Windows::Forms::ToolStripMenuItem^ backToolStripMenuItem;
 
 
 
@@ -95,6 +109,7 @@ namespace projectAkhirSTD {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(menuPublic::typeid));
 			this->dg_warga = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->backToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pesanToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->txt_pesan = (gcnew System::Windows::Forms::TextBox());
@@ -114,20 +129,22 @@ namespace projectAkhirSTD {
 			// 
 			this->dg_warga->AllowUserToAddRows = false;
 			this->dg_warga->AllowUserToDeleteRows = false;
+			this->dg_warga->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dg_warga->BackgroundColor = System::Drawing::Color::Pink;
 			this->dg_warga->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->dg_warga->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dg_warga->Location = System::Drawing::Point(12, 43);
 			this->dg_warga->Name = L"dg_warga";
 			this->dg_warga->ReadOnly = true;
+			this->dg_warga->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::CellSelect;
 			this->dg_warga->Size = System::Drawing::Size(740, 239);
 			this->dg_warga->TabIndex = 1;
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->homeToolStripMenuItem,
-					this->pesanToolStripMenuItem
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->backToolStripMenuItem,
+					this->homeToolStripMenuItem, this->pesanToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -135,17 +152,27 @@ namespace projectAkhirSTD {
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
+			// backToolStripMenuItem
+			// 
+			this->backToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backToolStripMenuItem.Image")));
+			this->backToolStripMenuItem->Name = L"backToolStripMenuItem";
+			this->backToolStripMenuItem->Size = System::Drawing::Size(60, 20);
+			this->backToolStripMenuItem->Text = L"Back";
+			this->backToolStripMenuItem->Click += gcnew System::EventHandler(this, &menuPublic::backToolStripMenuItem_Click);
+			// 
 			// homeToolStripMenuItem
 			// 
+			this->homeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"homeToolStripMenuItem.Image")));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(50, 20);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(66, 20);
 			this->homeToolStripMenuItem->Text = L"home";
 			this->homeToolStripMenuItem->Click += gcnew System::EventHandler(this, &menuPublic::homeToolStripMenuItem_Click);
 			// 
 			// pesanToolStripMenuItem
 			// 
+			this->pesanToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pesanToolStripMenuItem.Image")));
 			this->pesanToolStripMenuItem->Name = L"pesanToolStripMenuItem";
-			this->pesanToolStripMenuItem->Size = System::Drawing::Size(50, 20);
+			this->pesanToolStripMenuItem->Size = System::Drawing::Size(66, 20);
 			this->pesanToolStripMenuItem->Text = L"pesan";
 			this->pesanToolStripMenuItem->Click += gcnew System::EventHandler(this, &menuPublic::pesanToolStripMenuItem_Click);
 			// 
@@ -169,11 +196,14 @@ namespace projectAkhirSTD {
 			this->btnKirim->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnKirim->ForeColor = System::Drawing::Color::AliceBlue;
+			this->btnKirim->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnKirim.Image")));
+			this->btnKirim->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnKirim->Location = System::Drawing::Point(271, 313);
 			this->btnKirim->Name = L"btnKirim";
-			this->btnKirim->Size = System::Drawing::Size(114, 37);
+			this->btnKirim->Size = System::Drawing::Size(99, 37);
 			this->btnKirim->TabIndex = 5;
 			this->btnKirim->Text = L"Kirim";
+			this->btnKirim->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnKirim->UseVisualStyleBackColor = false;
 			this->btnKirim->Click += gcnew System::EventHandler(this, &menuPublic::btnKirim_Click);
 			// 
@@ -185,11 +215,14 @@ namespace projectAkhirSTD {
 			this->btnClear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnClear->ForeColor = System::Drawing::Color::AliceBlue;
+			this->btnClear->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnClear.Image")));
+			this->btnClear->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnClear->Location = System::Drawing::Point(391, 313);
 			this->btnClear->Name = L"btnClear";
-			this->btnClear->Size = System::Drawing::Size(113, 34);
+			this->btnClear->Size = System::Drawing::Size(133, 34);
 			this->btnClear->TabIndex = 6;
 			this->btnClear->Text = L"Bersihkan";
+			this->btnClear->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnClear->UseVisualStyleBackColor = false;
 			this->btnClear->Click += gcnew System::EventHandler(this, &menuPublic::btnClear_Click);
 			// 
@@ -218,11 +251,13 @@ namespace projectAkhirSTD {
 			this->waktu->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->waktu->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->waktu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->waktu->Location = System::Drawing::Point(547, 410);
 			this->waktu->Name = L"waktu";
 			this->waktu->Size = System::Drawing::Size(60, 24);
 			this->waktu->TabIndex = 9;
 			this->waktu->Text = L"label1";
+			this->waktu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label_pengirim
 			// 
@@ -268,12 +303,13 @@ namespace projectAkhirSTD {
 			this->Controls->Add(this->dg_warga);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
 			this->Name = L"menuPublic";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menu Public";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &menuPublic::menuPublic_FormClosing);
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &menuPublic::menuPublic_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &menuPublic::menuPublic_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_warga))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
@@ -289,7 +325,7 @@ namespace projectAkhirSTD {
 		//
 		String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
 		MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
-		MySqlCommand^ connCmd = gcnew MySqlCommand("select no,nama_warga,agama,pendidikan,jenis_pekerjaan from sisteminformasidesa.warga;", conn);
+		MySqlCommand^ connCmd = gcnew MySqlCommand("select nomor as No,nama_warga as Nama,agama as Agama,pendidikan as Pendidikan,jenis_pekerjaan as 'Jenis Pekerjaan' from sisteminformasidesa.warga;", conn);
 		MySqlCommand^ connCmd2 = gcnew MySqlCommand("select * from sisteminformasidesa.warga;", conn);
 		MySqlDataReader^ dataReader;
 
@@ -390,6 +426,7 @@ namespace projectAkhirSTD {
 	
 private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->txt_pesan->Clear();
+	this->list_pengirim->Text = "";
 }
 
 private: System::Void btnKirim_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -438,6 +475,14 @@ private: System::Void list_pengirim_TextChanged(System::Object^ sender, System::
 		this->btnClear->Enabled = true;
 
 	}
+}
+
+private: System::Void backToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	home->ShowDialog();
+}
+private: System::Void menuPublic_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+	Application::Exit();
 }
 };
 }

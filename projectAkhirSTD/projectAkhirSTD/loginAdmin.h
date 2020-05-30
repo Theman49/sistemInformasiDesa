@@ -16,8 +16,17 @@ namespace projectAkhirSTD {
 	public ref class loginAdmin : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ home;
 		loginAdmin(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		loginAdmin(Form^ loginAdm)
+		{
+			home = loginAdm;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -44,6 +53,8 @@ namespace projectAkhirSTD {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 
 	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::ToolStripMenuItem^ backToolStripMenuItem;
 	protected:
 
 	private:
@@ -66,8 +77,11 @@ namespace projectAkhirSTD {
 			this->txt_password = (gcnew System::Windows::Forms::TextBox());
 			this->btnOk = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->backToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// txt_username
@@ -133,26 +147,50 @@ namespace projectAkhirSTD {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->exitToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->backToolStripMenuItem,
+					this->exitToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(535, 24);
+			this->menuStrip1->Size = System::Drawing::Size(539, 24);
 			this->menuStrip1->TabIndex = 6;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
+			// backToolStripMenuItem
+			// 
+			this->backToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backToolStripMenuItem.Image")));
+			this->backToolStripMenuItem->Name = L"backToolStripMenuItem";
+			this->backToolStripMenuItem->Size = System::Drawing::Size(60, 20);
+			this->backToolStripMenuItem->Text = L"Back";
+			this->backToolStripMenuItem->Click += gcnew System::EventHandler(this, &loginAdmin::backToolStripMenuItem_Click);
+			// 
 			// exitToolStripMenuItem
 			// 
+			this->exitToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem.Image")));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(38, 20);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(54, 20);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &loginAdmin::exitToolStripMenuItem_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(337, 53);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(186, 237);
+			this->pictureBox1->TabIndex = 7;
+			this->pictureBox1->TabStop = false;
 			// 
 			// loginAdmin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(535, 355);
+			this->ClientSize = System::Drawing::Size(539, 331);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btnOk);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->txt_password);
@@ -160,6 +198,7 @@ namespace projectAkhirSTD {
 			this->Controls->Add(this->txt_username);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
 			this->Name = L"loginAdmin";
@@ -167,6 +206,7 @@ namespace projectAkhirSTD {
 			this->Text = L"Selamat Datang Admin";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -251,6 +291,10 @@ private: System::Void txt_password_KeyDown(System::Object^ sender, System::Windo
 			MessageBox::Show(ex->Message);
 		}
 	}
+}
+private: System::Void backToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	home->Show();
 }
 };
 }

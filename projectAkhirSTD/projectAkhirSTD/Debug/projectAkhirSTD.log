@@ -1,8 +1,8 @@
-﻿  lihatPesan.cpp
-  loginAdmin.cpp
+﻿  loginAdmin.cpp
   loginAwal.cpp
 C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\loginAwal.cpp(7,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   menuAdmin.cpp
+  perangkatDesa.cpp
   Generating Code...
   editDataAdmin.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   projectAkhirSTD.vcxproj -> C:\Users\HP\source\repos\projectAkhirSTD\Debug\projectAkhirSTD.exe

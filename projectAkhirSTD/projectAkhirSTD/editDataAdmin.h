@@ -109,28 +109,30 @@ namespace projectAkhirSTD {
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->backToolStripMenuItem,
-					this->exitToolStripMenuItem
+				this->exitToolStripMenuItem,
+					this->backToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(470, 24);
+			this->menuStrip1->Size = System::Drawing::Size(471, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// backToolStripMenuItem
 			// 
+			this->backToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backToolStripMenuItem.Image")));
 			this->backToolStripMenuItem->Name = L"backToolStripMenuItem";
-			this->backToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->backToolStripMenuItem->Size = System::Drawing::Size(60, 20);
 			this->backToolStripMenuItem->Text = L"Back";
 			this->backToolStripMenuItem->ToolTipText = L"Kembali ke menu admin";
 			this->backToolStripMenuItem->Click += gcnew System::EventHandler(this, &editDataAdmin::backToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
+			this->exitToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem.Image")));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
 			this->exitToolStripMenuItem->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(38, 20);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(54, 20);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &editDataAdmin::exitToolStripMenuItem_Click);
 			// 
@@ -139,11 +141,14 @@ namespace projectAkhirSTD {
 			this->btnUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnUpdate->Location = System::Drawing::Point(322, 232);
+			this->btnUpdate->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnUpdate.Image")));
+			this->btnUpdate->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->btnUpdate->Location = System::Drawing::Point(299, 200);
 			this->btnUpdate->Name = L"btnUpdate";
-			this->btnUpdate->Size = System::Drawing::Size(79, 37);
+			this->btnUpdate->Size = System::Drawing::Size(105, 39);
 			this->btnUpdate->TabIndex = 10;
 			this->btnUpdate->Text = L"Update";
+			this->btnUpdate->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnUpdate->UseVisualStyleBackColor = true;
 			this->btnUpdate->Click += gcnew System::EventHandler(this, &editDataAdmin::btnUpdate_Click);
 			// 
@@ -154,7 +159,7 @@ namespace projectAkhirSTD {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::OldLace;
-			this->label2->Location = System::Drawing::Point(63, 180);
+			this->label2->Location = System::Drawing::Point(66, 149);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(108, 26);
 			this->label2->TabIndex = 9;
@@ -164,7 +169,7 @@ namespace projectAkhirSTD {
 			// 
 			this->txt_password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_password->Location = System::Drawing::Point(182, 177);
+			this->txt_password->Location = System::Drawing::Point(185, 146);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->Size = System::Drawing::Size(219, 32);
 			this->txt_password->TabIndex = 8;
@@ -176,7 +181,7 @@ namespace projectAkhirSTD {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::OldLace;
-			this->label1->Location = System::Drawing::Point(63, 123);
+			this->label1->Location = System::Drawing::Point(66, 92);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(113, 26);
 			this->label1->TabIndex = 7;
@@ -186,7 +191,7 @@ namespace projectAkhirSTD {
 			// 
 			this->txt_username->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_username->Location = System::Drawing::Point(182, 123);
+			this->txt_username->Location = System::Drawing::Point(185, 92);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(219, 32);
 			this->txt_username->TabIndex = 6;
@@ -196,8 +201,7 @@ namespace projectAkhirSTD {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(470, 351);
+			this->ClientSize = System::Drawing::Size(471, 296);
 			this->Controls->Add(this->btnUpdate);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->txt_password);
@@ -205,6 +209,7 @@ namespace projectAkhirSTD {
 			this->Controls->Add(this->txt_username);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"editDataAdmin";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;

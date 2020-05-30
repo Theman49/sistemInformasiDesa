@@ -8,3 +8,4 @@ C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\Debug\projectAkhirSTD.m
 C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\Debug\projectAkhirSTD.editDataAdmin.resources
 C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\Debug\projectAkhirSTD.editDataWarga.resources
 C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\Debug\projectAkhirSTD.lihatPesan.resources
+C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\Debug\projectAkhirSTD.perangkatDesa.resources

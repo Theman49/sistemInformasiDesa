@@ -130,6 +130,7 @@
     <ClCompile Include="loginAwal.cpp" />
     <ClCompile Include="menuAdmin.cpp" />
     <ClCompile Include="menuPublic.cpp" />
+    <ClCompile Include="perangkatDesa.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="editDataAdmin.h">
@@ -151,6 +152,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="menuPublic.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="perangkatDesa.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -175,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menuPublic.resx">
       <DependentUpon>menuPublic.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perangkatDesa.resx">
+      <DependentUpon>perangkatDesa.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

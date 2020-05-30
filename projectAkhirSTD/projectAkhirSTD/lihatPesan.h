@@ -47,7 +47,7 @@ namespace projectAkhirSTD {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^ backToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
+
 	private: System::Windows::Forms::DataGridView^ dg_pesan;
 
 
@@ -67,7 +67,6 @@ namespace projectAkhirSTD {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(lihatPesan::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->backToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dg_pesan = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_pesan))->BeginInit();
@@ -75,10 +74,7 @@ namespace projectAkhirSTD {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->backToolStripMenuItem,
-					this->exitToolStripMenuItem
-			});
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->backToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(914, 24);
@@ -87,24 +83,19 @@ namespace projectAkhirSTD {
 			// 
 			// backToolStripMenuItem
 			// 
+			this->backToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backToolStripMenuItem.Image")));
 			this->backToolStripMenuItem->Name = L"backToolStripMenuItem";
-			this->backToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->backToolStripMenuItem->Size = System::Drawing::Size(60, 20);
 			this->backToolStripMenuItem->Text = L"Back";
 			this->backToolStripMenuItem->Click += gcnew System::EventHandler(this, &lihatPesan::backToolStripMenuItem_Click);
 			// 
-			// exitToolStripMenuItem
-			// 
-			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(38, 20);
-			this->exitToolStripMenuItem->Text = L"Exit";
-			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &lihatPesan::exitToolStripMenuItem_Click);
-			// 
 			// dg_pesan
 			// 
+			this->dg_pesan->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dg_pesan->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dg_pesan->Location = System::Drawing::Point(16, 35);
 			this->dg_pesan->Name = L"dg_pesan";
-			this->dg_pesan->Size = System::Drawing::Size(873, 328);
+			this->dg_pesan->Size = System::Drawing::Size(886, 328);
 			this->dg_pesan->TabIndex = 1;
 			// 
 			// lihatPesan
@@ -117,11 +108,14 @@ namespace projectAkhirSTD {
 			this->ClientSize = System::Drawing::Size(914, 476);
 			this->Controls->Add(this->dg_pesan);
 			this->Controls->Add(this->menuStrip1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->Name = L"lihatPesan";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"lihatPesan";
+			this->Text = L"Pesan Warga";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &lihatPesan::lihatPesan_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &lihatPesan::lihatPesan_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -135,14 +129,12 @@ namespace projectAkhirSTD {
 		this->Hide();
 		menuAdm->Show();
 	}
-	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		Application::Exit();
-	}
+
 private: System::Void lihatPesan_Load(System::Object^ sender, System::EventArgs^ e) {
 
 	String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
-	MySqlCommand^ connCmd = gcnew MySqlCommand("select * from sisteminformasidesa.pesan", conn);
+	MySqlCommand^ connCmd = gcnew MySqlCommand("select tanggal as 'Waktu Pengiriman', pengirim as Pengirim, isi_pesan as Pesan from sisteminformasidesa.pesan", conn);
 	
 	try {
 		MySqlDataAdapter^ sda = gcnew MySqlDataAdapter();
@@ -161,6 +153,9 @@ private: System::Void lihatPesan_Load(System::Object^ sender, System::EventArgs^
 		MessageBox::Show(ex->Message);
 	}
 
+}
+private: System::Void lihatPesan_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+	Application::Exit();
 }
 };
 }

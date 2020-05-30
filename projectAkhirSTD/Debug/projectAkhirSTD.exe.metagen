@@ -5,6 +5,7 @@
   projectAkhirSTD.loginAwal.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.menuAdmin.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.menuPublic.resources - Embedded, ContainedInManifestFile, 
+  projectAkhirSTD.perangkatDesa.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly projectAkhirSTD, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -44,15 +45,27 @@ Class projectAkhirSTD.lihatPesan: AutoLayout, AnsiClass, Class, Public, BeforeFi
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Form menuAdm : Public
+Class projectAkhirSTD.perangkatDesa: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form menuAdm : Public
 Class projectAkhirSTD.menuAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class projectAkhirSTD.loginAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form home : Public
 Class projectAkhirSTD.menuPublic: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form home : Public
 Class projectAkhirSTD.loginAwal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
