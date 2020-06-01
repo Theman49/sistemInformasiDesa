@@ -3,6 +3,7 @@
 #include "editDataWarga.h"
 #include "lihatPesan.h"
 #include "perangkatDesa.h"
+
 namespace projectAkhirSTD {
 
 	using namespace System;
@@ -18,8 +19,17 @@ namespace projectAkhirSTD {
 	public ref class menuAdmin : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ beranda;
 		menuAdmin(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		menuAdmin(Form^ menuAdm)
+		{
+			beranda = menuAdm;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -49,6 +59,9 @@ namespace projectAkhirSTD {
 
 
 	private: System::Windows::Forms::Button^ btnPrDesa;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 
 
 
@@ -73,6 +86,8 @@ namespace projectAkhirSTD {
 			this->btnInDesa = (gcnew System::Windows::Forms::Button());
 			this->btnLiPesan = (gcnew System::Windows::Forms::Button());
 			this->btnPrDesa = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnDbAdmin
@@ -90,7 +105,7 @@ namespace projectAkhirSTD {
 				static_cast<System::Byte>(0)));
 			this->btnDbAdmin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnDbAdmin.Image")));
 			this->btnDbAdmin->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnDbAdmin->Location = System::Drawing::Point(12, 12);
+			this->btnDbAdmin->Location = System::Drawing::Point(12, 27);
 			this->btnDbAdmin->Name = L"btnDbAdmin";
 			this->btnDbAdmin->Size = System::Drawing::Size(305, 46);
 			this->btnDbAdmin->TabIndex = 1;
@@ -181,7 +196,7 @@ namespace projectAkhirSTD {
 				static_cast<System::Byte>(0)));
 			this->btnPrDesa->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPrDesa.Image")));
 			this->btnPrDesa->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnPrDesa->Location = System::Drawing::Point(12, 85);
+			this->btnPrDesa->Location = System::Drawing::Point(12, 91);
 			this->btnPrDesa->Name = L"btnPrDesa";
 			this->btnPrDesa->Size = System::Drawing::Size(305, 46);
 			this->btnPrDesa->TabIndex = 5;
@@ -189,14 +204,25 @@ namespace projectAkhirSTD {
 			this->btnPrDesa->UseVisualStyleBackColor = false;
 			this->btnPrDesa->Click += gcnew System::EventHandler(this, &menuAdmin::btnPrDesa_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(362, 91);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(176, 189);
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
 			// menuAdmin
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PaleGreen;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(561, 361);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btnPrDesa);
 			this->Controls->Add(this->btnLiPesan);
 			this->Controls->Add(this->btnInDesa);
@@ -209,6 +235,7 @@ namespace projectAkhirSTD {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Menu Admin";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &menuAdmin::menuAdmin_FormClosed);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -242,5 +269,6 @@ private: System::Void btnPrDesa_Click(System::Object^ sender, System::EventArgs^
 	perangkatDesa^ perangkat = gcnew perangkatDesa(this);
 	perangkat->ShowDialog();
 }
+
 };
 }

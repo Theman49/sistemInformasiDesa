@@ -131,6 +131,7 @@
     <ClCompile Include="menuAdmin.cpp" />
     <ClCompile Include="menuPublic.cpp" />
     <ClCompile Include="perangkatDesa.cpp" />
+    <ClCompile Include="perangkatDesaReadOnly.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="editDataAdmin.h">
@@ -157,6 +158,9 @@
     <ClInclude Include="perangkatDesa.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="perangkatDesaReadOnly.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="editDataAdmin.resx">
@@ -182,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perangkatDesa.resx">
       <DependentUpon>perangkatDesa.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perangkatDesaReadOnly.resx">
+      <DependentUpon>perangkatDesaReadOnly.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

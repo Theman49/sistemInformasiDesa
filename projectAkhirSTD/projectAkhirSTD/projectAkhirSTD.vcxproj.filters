@@ -39,6 +39,9 @@
     <ClCompile Include="perangkatDesa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="perangkatDesaReadOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loginAwal.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="perangkatDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perangkatDesaReadOnly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

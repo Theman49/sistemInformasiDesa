@@ -6,6 +6,7 @@
   projectAkhirSTD.menuAdmin.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.menuPublic.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.perangkatDesa.resources - Embedded, ContainedInManifestFile, 
+  projectAkhirSTD.perangkatDesaReadOnly.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly projectAkhirSTD, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -53,13 +54,19 @@ Class projectAkhirSTD.perangkatDesa: AutoLayout, AnsiClass, Class, Public, Befor
     System.Windows.Forms.Form menuAdm : Public
 Class projectAkhirSTD.menuAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form beranda : Public
 Class projectAkhirSTD.loginAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Form home : Public
+Class projectAkhirSTD.perangkatDesaReadOnly: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class projectAkhirSTD.menuPublic: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "perangkatDesaReadOnly.h"
 namespace projectAkhirSTD {
 
 	using namespace System;
@@ -71,6 +71,9 @@ namespace projectAkhirSTD {
 	private: System::Windows::Forms::Label^ label_pengirim;
 	private: System::Windows::Forms::ComboBox^ list_pengirim;
 	private: System::Windows::Forms::ToolStripMenuItem^ backToolStripMenuItem;
+	private: System::Windows::Forms::Panel^ panelContent;
+	private: System::Windows::Forms::ToolStripMenuItem^ perangkatToolStripMenuItem;
+
 
 
 
@@ -112,6 +115,7 @@ namespace projectAkhirSTD {
 			this->backToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pesanToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->perangkatToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->txt_pesan = (gcnew System::Windows::Forms::TextBox());
 			this->btnKirim = (gcnew System::Windows::Forms::Button());
 			this->btnClear = (gcnew System::Windows::Forms::Button());
@@ -121,6 +125,7 @@ namespace projectAkhirSTD {
 			this->waktu = (gcnew System::Windows::Forms::Label());
 			this->label_pengirim = (gcnew System::Windows::Forms::Label());
 			this->list_pengirim = (gcnew System::Windows::Forms::ComboBox());
+			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_warga))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -142,9 +147,9 @@ namespace projectAkhirSTD {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->backToolStripMenuItem,
-					this->homeToolStripMenuItem, this->pesanToolStripMenuItem
+					this->homeToolStripMenuItem, this->pesanToolStripMenuItem, this->perangkatToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -162,6 +167,9 @@ namespace projectAkhirSTD {
 			// 
 			// homeToolStripMenuItem
 			// 
+			this->homeToolStripMenuItem->Checked = true;
+			this->homeToolStripMenuItem->CheckOnClick = true;
+			this->homeToolStripMenuItem->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->homeToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"homeToolStripMenuItem.Image")));
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
 			this->homeToolStripMenuItem->Size = System::Drawing::Size(66, 20);
@@ -170,11 +178,25 @@ namespace projectAkhirSTD {
 			// 
 			// pesanToolStripMenuItem
 			// 
+			this->pesanToolStripMenuItem->Checked = true;
+			this->pesanToolStripMenuItem->CheckOnClick = true;
+			this->pesanToolStripMenuItem->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->pesanToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pesanToolStripMenuItem.Image")));
 			this->pesanToolStripMenuItem->Name = L"pesanToolStripMenuItem";
 			this->pesanToolStripMenuItem->Size = System::Drawing::Size(66, 20);
 			this->pesanToolStripMenuItem->Text = L"pesan";
 			this->pesanToolStripMenuItem->Click += gcnew System::EventHandler(this, &menuPublic::pesanToolStripMenuItem_Click);
+			// 
+			// perangkatToolStripMenuItem
+			// 
+			this->perangkatToolStripMenuItem->Checked = true;
+			this->perangkatToolStripMenuItem->CheckOnClick = true;
+			this->perangkatToolStripMenuItem->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->perangkatToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"perangkatToolStripMenuItem.Image")));
+			this->perangkatToolStripMenuItem->Name = L"perangkatToolStripMenuItem";
+			this->perangkatToolStripMenuItem->Size = System::Drawing::Size(161, 20);
+			this->perangkatToolStripMenuItem->Text = L"Struktur Perangkat Desa";
+			this->perangkatToolStripMenuItem->Click += gcnew System::EventHandler(this, &menuPublic::perangkatToolStripMenuItem_Click);
 			// 
 			// txt_pesan
 			// 
@@ -286,6 +308,14 @@ namespace projectAkhirSTD {
 			this->list_pengirim->TabIndex = 10;
 			this->list_pengirim->TextChanged += gcnew System::EventHandler(this, &menuPublic::list_pengirim_TextChanged);
 			// 
+			// panelContent
+			// 
+			this->panelContent->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panelContent->Location = System::Drawing::Point(0, 24);
+			this->panelContent->Name = L"panelContent";
+			this->panelContent->Size = System::Drawing::Size(765, 419);
+			this->panelContent->TabIndex = 12;
+			// 
 			// menuPublic
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -293,6 +323,7 @@ namespace projectAkhirSTD {
 			this->BackColor = System::Drawing::Color::Aquamarine;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(765, 443);
+			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->label_pengirim);
 			this->Controls->Add(this->list_pengirim);
 			this->Controls->Add(this->waktu);
@@ -362,6 +393,7 @@ namespace projectAkhirSTD {
 		this->btnKirim->Hide();
 		this->list_pengirim->Hide();
 		this->label_pengirim->Hide();
+		this->panelContent->Hide();
 
 
 		/*
@@ -398,6 +430,7 @@ namespace projectAkhirSTD {
 		this->btnKirim->Hide();
 		this->list_pengirim->Hide();
 		this->label_pengirim->Hide();
+		this->panelContent->Hide();
 		
 		this->waktu->Location = System::Drawing::Point(547, 410);
 		this->waktu->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -412,6 +445,7 @@ namespace projectAkhirSTD {
 		this->btnKirim->Show();
 		this->list_pengirim->Show();
 		this->label_pengirim->Show();
+		this->panelContent->Hide();
 
 
 		
@@ -483,6 +517,17 @@ private: System::Void backToolStripMenuItem_Click(System::Object^ sender, System
 }
 private: System::Void menuPublic_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 	Application::Exit();
+}
+private: System::Void perangkatToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dg_warga->Hide();
+	this->labelPesan->Hide();
+	this->txt_pesan->Hide();
+	this->btnClear->Hide();
+	this->btnKirim->Hide();
+	this->list_pengirim->Hide();
+	this->label_pengirim->Hide();
+	this->panelContent->Show();
+	this->panelContent->Controls->Add(gcnew perangkatDesaReadOnly);
 }
 };
 }
