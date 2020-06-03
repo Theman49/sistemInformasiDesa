@@ -19,17 +19,8 @@ namespace projectAkhirSTD {
 	public ref class menuAdmin : public System::Windows::Forms::Form
 	{
 	public:
-		Form^ beranda;
 		menuAdmin(void)
 		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-		menuAdmin(Form^ menuAdm)
-		{
-			beranda = menuAdm;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -60,6 +51,8 @@ namespace projectAkhirSTD {
 
 	private: System::Windows::Forms::Button^ btnPrDesa;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 
 
 
@@ -269,6 +262,7 @@ private: System::Void btnPrDesa_Click(System::Object^ sender, System::EventArgs^
 	perangkatDesa^ perangkat = gcnew perangkatDesa(this);
 	perangkat->ShowDialog();
 }
+
 
 };
 }

@@ -1,10 +1,12 @@
+  projectAkhirSTD.dataPenduduk.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.editDataAdmin.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.editDataWarga.resources - Embedded, ContainedInManifestFile, 
+  projectAkhirSTD.kirimPesan.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.lihatPesan.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.loginAdmin.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.loginAwal.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.menuAdmin.resources - Embedded, ContainedInManifestFile, 
-  projectAkhirSTD.menuPublic.resources - Embedded, ContainedInManifestFile, 
+  projectAkhirSTD.menuPublik.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.perangkatDesa.resources - Embedded, ContainedInManifestFile, 
   projectAkhirSTD.perangkatDesaReadOnly.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -28,6 +30,9 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class projectAkhirSTD.dataPenduduk: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class projectAkhirSTD.editDataAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -40,6 +45,9 @@ Class projectAkhirSTD.editDataWarga: AutoLayout, AnsiClass, Class, Public, Befor
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.Form menuAdm : Public
+Class projectAkhirSTD.kirimPesan: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class projectAkhirSTD.lihatPesan: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -54,10 +62,7 @@ Class projectAkhirSTD.perangkatDesa: AutoLayout, AnsiClass, Class, Public, Befor
     System.Windows.Forms.Form menuAdm : Public
 Class projectAkhirSTD.menuAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.Form beranda : Public
 Class projectAkhirSTD.loginAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -67,7 +72,7 @@ Class projectAkhirSTD.loginAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFi
 Class projectAkhirSTD.perangkatDesaReadOnly: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class projectAkhirSTD.menuPublic: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class projectAkhirSTD.menuPublik: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

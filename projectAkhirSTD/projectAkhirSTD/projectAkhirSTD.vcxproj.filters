@@ -24,9 +24,6 @@
     <ClCompile Include="menuAdmin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="menuPublic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="editDataAdmin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,6 +39,15 @@
     <ClCompile Include="perangkatDesaReadOnly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="menuPublik.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kirimPesan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dataPenduduk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loginAwal.h">
@@ -51,9 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="menuAdmin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="menuPublic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="editDataAdmin.h">
@@ -69,6 +72,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="perangkatDesaReadOnly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuPublik.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kirimPesan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dataPenduduk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

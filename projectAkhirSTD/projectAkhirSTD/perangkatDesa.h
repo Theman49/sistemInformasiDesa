@@ -75,6 +75,7 @@ namespace projectAkhirSTD {
 
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Button^ btn_update;
+	private: System::Windows::Forms::ToolStripMenuItem^ refreshToolStripMenuItem;
 
 
 
@@ -94,6 +95,7 @@ namespace projectAkhirSTD {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(perangkatDesa::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->backToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->refreshToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txt_kades = (gcnew System::Windows::Forms::TextBox());
 			this->txt_kaurUmum = (gcnew System::Windows::Forms::TextBox());
@@ -117,7 +119,10 @@ namespace projectAkhirSTD {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->backToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->backToolStripMenuItem,
+					this->refreshToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(926, 24);
@@ -131,6 +136,13 @@ namespace projectAkhirSTD {
 			this->backToolStripMenuItem->Size = System::Drawing::Size(60, 20);
 			this->backToolStripMenuItem->Text = L"Back";
 			this->backToolStripMenuItem->Click += gcnew System::EventHandler(this, &perangkatDesa::backToolStripMenuItem_Click);
+			// 
+			// refreshToolStripMenuItem
+			// 
+			this->refreshToolStripMenuItem->Name = L"refreshToolStripMenuItem";
+			this->refreshToolStripMenuItem->Size = System::Drawing::Size(58, 20);
+			this->refreshToolStripMenuItem->Text = L"Refresh";
+			this->refreshToolStripMenuItem->Click += gcnew System::EventHandler(this, &perangkatDesa::refreshToolStripMenuItem_Click);
 			// 
 			// label1
 			// 
@@ -155,7 +167,6 @@ namespace projectAkhirSTD {
 			this->txt_kades->Size = System::Drawing::Size(181, 23);
 			this->txt_kades->TabIndex = 2;
 			this->txt_kades->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->txt_kades->TextChanged += gcnew System::EventHandler(this, &perangkatDesa::txt_kades_TextChanged);
 			// 
 			// txt_kaurUmum
 			// 
@@ -164,7 +175,7 @@ namespace projectAkhirSTD {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txt_kaurUmum->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_kaurUmum->Location = System::Drawing::Point(506, 241);
+			this->txt_kaurUmum->Location = System::Drawing::Point(506, 269);
 			this->txt_kaurUmum->Name = L"txt_kaurUmum";
 			this->txt_kaurUmum->Size = System::Drawing::Size(181, 23);
 			this->txt_kaurUmum->TabIndex = 4;
@@ -175,7 +186,7 @@ namespace projectAkhirSTD {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(542, 199);
+			this->label2->Location = System::Drawing::Point(542, 227);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(116, 34);
 			this->label2->TabIndex = 3;
@@ -189,7 +200,7 @@ namespace projectAkhirSTD {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txt_kaurKeuangan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txt_kaurKeuangan->Location = System::Drawing::Point(712, 241);
+			this->txt_kaurKeuangan->Location = System::Drawing::Point(712, 269);
 			this->txt_kaurKeuangan->Name = L"txt_kaurKeuangan";
 			this->txt_kaurKeuangan->Size = System::Drawing::Size(181, 23);
 			this->txt_kaurKeuangan->TabIndex = 6;
@@ -200,7 +211,7 @@ namespace projectAkhirSTD {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(751, 208);
+			this->label3->Location = System::Drawing::Point(751, 236);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(107, 17);
 			this->label3->TabIndex = 5;
@@ -238,7 +249,7 @@ namespace projectAkhirSTD {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txt_seksiKesejahteraan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->txt_seksiKesejahteraan->Location = System::Drawing::Point(223, 292);
+			this->txt_seksiKesejahteraan->Location = System::Drawing::Point(228, 311);
 			this->txt_seksiKesejahteraan->Name = L"txt_seksiKesejahteraan";
 			this->txt_seksiKesejahteraan->Size = System::Drawing::Size(181, 23);
 			this->txt_seksiKesejahteraan->TabIndex = 12;
@@ -249,7 +260,7 @@ namespace projectAkhirSTD {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(260, 227);
+			this->label5->Location = System::Drawing::Point(265, 246);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(105, 51);
 			this->label5->TabIndex = 11;
@@ -263,7 +274,7 @@ namespace projectAkhirSTD {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->txt_seksiPemerintahan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->txt_seksiPemerintahan->Location = System::Drawing::Point(22, 292);
+			this->txt_seksiPemerintahan->Location = System::Drawing::Point(27, 311);
 			this->txt_seksiPemerintahan->Name = L"txt_seksiPemerintahan";
 			this->txt_seksiPemerintahan->Size = System::Drawing::Size(181, 23);
 			this->txt_seksiPemerintahan->TabIndex = 10;
@@ -274,7 +285,7 @@ namespace projectAkhirSTD {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(65, 244);
+			this->label6->Location = System::Drawing::Point(72, 254);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(96, 34);
 			this->label6->TabIndex = 9;
@@ -284,11 +295,14 @@ namespace projectAkhirSTD {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::SeaShell;
+			this->label7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(645, 136);
+			this->label7->Location = System::Drawing::Point(625, 133);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(109, 17);
+			this->label7->Padding = System::Windows::Forms::Padding(10, 5, 10, 5);
+			this->label7->Size = System::Drawing::Size(131, 29);
 			this->label7->TabIndex = 13;
 			this->label7->Text = L"Sekretaris Desa";
 			// 
@@ -406,8 +420,7 @@ namespace projectAkhirSTD {
 		Application::Exit();
 	}
 
-private: System::Void txt_kades_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void perangkatDesa_Load(System::Object^ sender, System::EventArgs^ e) {
 	String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
@@ -441,8 +454,34 @@ private: System::Void perangkatDesa_Load(System::Object^ sender, System::EventAr
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+
+
+	
 }
 private: System::Void btn_update_Click(System::Object^ sender, System::EventArgs^ e) {
+	Graphics^ myGraphic = this->CreateGraphics();
+	Pen^ myPen = gcnew Pen(Brushes::Gray, 2);
+	Pen^ penLine = gcnew Pen(Brushes::Gray, 2);
+	myPen->StartCap = Drawing2D::LineCap::ArrowAnchor;
+	//tengah
+	myGraphic->DrawLine(myPen, 467, 408, 467, 100);
+	//bawah
+	myGraphic->DrawLine(penLine, 260, 375, 667, 375);
+	myGraphic->DrawLine(myPen, 262, 408, 262, 375);
+	myGraphic->DrawLine(myPen, 664, 408, 664, 375);
+	//atas
+	myGraphic->DrawLine(penLine, 467, 149, 625, 149);
+	myGraphic->DrawLine(myPen, 600, 224, 692, 169);
+	myGraphic->DrawLine(myPen, 803, 224, 690, 169);
+	//seksi
+	myGraphic->DrawLine(penLine, 210, 173, 467, 173);
+	myGraphic->DrawLine(penLine, 212, 173, 212, 190);
+	myGraphic->DrawLine(penLine, 117, 190, 318, 190);
+	myGraphic->DrawLine(myPen, 119, 237, 119, 190);
+	myGraphic->DrawLine(myPen, 315, 230, 315, 190);
+	
+
+
 	String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
 	MySqlCommand^ connCmd = gcnew MySqlCommand("update sisteminformasidesa.perangkat set kades='" + this->txt_kades->Text + "', kaur_umum = '" + this->txt_kaurUmum->Text + "', kaur_keuangan = '" + this->txt_kaurKeuangan->Text + "', seksi_pemerintahan = '" + this->txt_seksiPemerintahan->Text + "', seksi_kesejahteraan = '" + this->txt_seksiKesejahteraan->Text + "', kadus_satu = '" + this->txt_kadusSatu->Text + "', kadus_dua = '" + this->txt_kadusDua->Text + "', kadus_tiga = '" + this->txt_kadusTiga->Text + "';", conn);
@@ -463,6 +502,30 @@ private: System::Void btn_update_Click(System::Object^ sender, System::EventArgs
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+}
+private: System::Void txt_kades_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void refreshToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	Graphics^ myGraphic = CreateGraphics();
+	Pen^ myPen = gcnew Pen(Brushes::Gray, 2);
+	Pen^ penLine = gcnew Pen(Brushes::Gray, 2);
+	myPen->StartCap = Drawing2D::LineCap::ArrowAnchor;
+	//tengah
+	myGraphic->DrawLine(myPen, 467, 408, 467, 100);
+	//bawah
+	myGraphic->DrawLine(penLine, 260, 375, 667, 375);
+	myGraphic->DrawLine(myPen, 260, 408, 260, 375);
+	myGraphic->DrawLine(myPen, 667, 408, 667, 375);
+	//atas
+	myGraphic->DrawLine(penLine, 467, 149, 625, 149);
+	myGraphic->DrawLine(myPen, 600, 224, 692, 160);
+	myGraphic->DrawLine(myPen, 803, 224, 690, 160);
+	//seksi
+	myGraphic->DrawLine(penLine, 210, 173, 467, 173);
+	myGraphic->DrawLine(penLine, 210, 173, 210, 190);
+	myGraphic->DrawLine(penLine, 117, 190, 318, 190);
+	myGraphic->DrawLine(myPen, 117, 237, 117, 190);
+	myGraphic->DrawLine(myPen, 318, 230, 318, 190);
 }
 };
 }

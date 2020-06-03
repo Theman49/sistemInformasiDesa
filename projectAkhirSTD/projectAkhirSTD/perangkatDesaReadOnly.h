@@ -121,7 +121,7 @@ namespace projectAkhirSTD {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(329, 20);
+			this->label1->Location = System::Drawing::Point(353, 21);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(89, 17);
 			this->label1->TabIndex = 0;
@@ -129,7 +129,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kades
 			// 
-			this->txt_kades->Location = System::Drawing::Point(297, 50);
+			this->txt_kades->Location = System::Drawing::Point(322, 51);
 			this->txt_kades->Name = L"txt_kades";
 			this->txt_kades->ReadOnly = true;
 			this->txt_kades->Size = System::Drawing::Size(148, 20);
@@ -138,7 +138,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kaurKeuangan
 			// 
-			this->txt_kaurKeuangan->Location = System::Drawing::Point(586, 192);
+			this->txt_kaurKeuangan->Location = System::Drawing::Point(613, 247);
 			this->txt_kaurKeuangan->Name = L"txt_kaurKeuangan";
 			this->txt_kaurKeuangan->ReadOnly = true;
 			this->txt_kaurKeuangan->Size = System::Drawing::Size(148, 20);
@@ -150,7 +150,7 @@ namespace projectAkhirSTD {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(608, 156);
+			this->label2->Location = System::Drawing::Point(635, 211);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(107, 17);
 			this->label2->TabIndex = 2;
@@ -158,7 +158,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kaurUmum
 			// 
-			this->txt_kaurUmum->Location = System::Drawing::Point(427, 192);
+			this->txt_kaurUmum->Location = System::Drawing::Point(449, 247);
 			this->txt_kaurUmum->Name = L"txt_kaurUmum";
 			this->txt_kaurUmum->ReadOnly = true;
 			this->txt_kaurUmum->Size = System::Drawing::Size(148, 20);
@@ -170,7 +170,7 @@ namespace projectAkhirSTD {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(450, 147);
+			this->label3->Location = System::Drawing::Point(472, 202);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(104, 34);
 			this->label3->TabIndex = 4;
@@ -179,7 +179,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_seksiPemerintahan
 			// 
-			this->txt_seksiPemerintahan->Location = System::Drawing::Point(21, 220);
+			this->txt_seksiPemerintahan->Location = System::Drawing::Point(27, 280);
 			this->txt_seksiPemerintahan->Name = L"txt_seksiPemerintahan";
 			this->txt_seksiPemerintahan->ReadOnly = true;
 			this->txt_seksiPemerintahan->Size = System::Drawing::Size(148, 20);
@@ -191,7 +191,7 @@ namespace projectAkhirSTD {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(49, 164);
+			this->label4->Location = System::Drawing::Point(55, 224);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(96, 34);
 			this->label4->TabIndex = 8;
@@ -200,7 +200,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_seksiKesejahteraan
 			// 
-			this->txt_seksiKesejahteraan->Location = System::Drawing::Point(180, 220);
+			this->txt_seksiKesejahteraan->Location = System::Drawing::Point(199, 280);
 			this->txt_seksiKesejahteraan->Name = L"txt_seksiKesejahteraan";
 			this->txt_seksiKesejahteraan->ReadOnly = true;
 			this->txt_seksiKesejahteraan->Size = System::Drawing::Size(148, 20);
@@ -212,7 +212,7 @@ namespace projectAkhirSTD {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(191, 155);
+			this->label5->Location = System::Drawing::Point(210, 215);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(128, 51);
 			this->label5->TabIndex = 6;
@@ -221,7 +221,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kadusSatu
 			// 
-			this->txt_kadusSatu->Location = System::Drawing::Point(144, 351);
+			this->txt_kadusSatu->Location = System::Drawing::Point(157, 394);
 			this->txt_kadusSatu->Name = L"txt_kadusSatu";
 			this->txt_kadusSatu->ReadOnly = true;
 			this->txt_kadusSatu->Size = System::Drawing::Size(148, 20);
@@ -233,7 +233,7 @@ namespace projectAkhirSTD {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(167, 322);
+			this->label6->Location = System::Drawing::Point(180, 365);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(104, 17);
 			this->label6->TabIndex = 12;
@@ -241,7 +241,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kadusDua
 			// 
-			this->txt_kadusDua->Location = System::Drawing::Point(303, 351);
+			this->txt_kadusDua->Location = System::Drawing::Point(333, 394);
 			this->txt_kadusDua->Name = L"txt_kadusDua";
 			this->txt_kadusDua->ReadOnly = true;
 			this->txt_kadusDua->Size = System::Drawing::Size(148, 20);
@@ -250,7 +250,7 @@ namespace projectAkhirSTD {
 			// 
 			// txt_kadusTiga
 			// 
-			this->txt_kadusTiga->Location = System::Drawing::Point(463, 351);
+			this->txt_kadusTiga->Location = System::Drawing::Point(507, 394);
 			this->txt_kadusTiga->Name = L"txt_kadusTiga";
 			this->txt_kadusTiga->ReadOnly = true;
 			this->txt_kadusTiga->Size = System::Drawing::Size(148, 20);
@@ -260,11 +260,13 @@ namespace projectAkhirSTD {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(535, 108);
+			this->label9->Location = System::Drawing::Point(557, 105);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(72, 17);
+			this->label9->Padding = System::Windows::Forms::Padding(5);
+			this->label9->Size = System::Drawing::Size(84, 29);
 			this->label9->TabIndex = 16;
 			this->label9->Text = L"Sekretaris";
 			// 
@@ -273,7 +275,7 @@ namespace projectAkhirSTD {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(329, 322);
+			this->label7->Location = System::Drawing::Point(353, 365);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(107, 17);
 			this->label7->TabIndex = 17;
@@ -284,7 +286,7 @@ namespace projectAkhirSTD {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(487, 322);
+			this->label8->Location = System::Drawing::Point(531, 365);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(110, 17);
 			this->label8->TabIndex = 18;
@@ -294,6 +296,7 @@ namespace projectAkhirSTD {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightBlue;
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label9);
@@ -312,7 +315,7 @@ namespace projectAkhirSTD {
 			this->Controls->Add(this->txt_kades);
 			this->Controls->Add(this->label1);
 			this->Name = L"perangkatDesaReadOnly";
-			this->Size = System::Drawing::Size(763, 420);
+			this->Size = System::Drawing::Size(790, 439);
 			this->Load += gcnew System::EventHandler(this, &perangkatDesaReadOnly::perangkatDesaReadOnly_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -320,6 +323,28 @@ namespace projectAkhirSTD {
 		}
 #pragma endregion
 	private: System::Void perangkatDesaReadOnly_Load(System::Object^ sender, System::EventArgs^ e) {
+		Graphics^ myGraphics = this->CreateGraphics();
+		Pen^ Arrow = gcnew Pen(Brushes::Gray, 2);
+		Arrow->StartCap = Drawing2D::LineCap::ArrowAnchor;
+		Pen^ Line = gcnew Pen(Brushes::Gray, 2);
+
+		//tengah
+		myGraphics->DrawLine(Arrow, 395, 360, 395, 65);
+		//atas
+		myGraphics->DrawLine(Line, 395, 120, 557, 120);
+		myGraphics->DrawLine(Arrow, 544, 197, 599, 134);
+		myGraphics->DrawLine(Arrow, 688, 197, 599, 134);
+		//seksi
+		myGraphics->DrawLine(Line, 180, 152, 395, 152);
+		myGraphics->DrawLine(Line, 180, 152, 180, 170);
+		myGraphics->DrawLine(Line, 101, 170, 270, 170);
+		myGraphics->DrawLine(Arrow, 101, 219, 101, 170);
+		myGraphics->DrawLine(Arrow, 270, 215, 270, 170);
+		//bawah
+		myGraphics->DrawLine(Line, 231, 340, 581, 340);
+		myGraphics->DrawLine(Arrow, 231, 360, 231, 340);
+		myGraphics->DrawLine(Arrow, 581, 360, 581, 340);
+
 		String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
 		MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
 		MySqlCommand^ connCmd = gcnew MySqlCommand("select * from sisteminformasidesa.perangkat;", conn);
@@ -353,5 +378,6 @@ namespace projectAkhirSTD {
 			MessageBox::Show(ex->Message);
 		}
 	}
+
 };
 }

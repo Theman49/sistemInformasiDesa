@@ -123,22 +123,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dataPenduduk.cpp" />
     <ClCompile Include="editDataAdmin.cpp" />
     <ClCompile Include="editDataWarga.cpp" />
+    <ClCompile Include="kirimPesan.cpp" />
     <ClCompile Include="lihatPesan.cpp" />
     <ClCompile Include="loginAdmin.cpp" />
     <ClCompile Include="loginAwal.cpp" />
     <ClCompile Include="menuAdmin.cpp" />
-    <ClCompile Include="menuPublic.cpp" />
+    <ClCompile Include="menuPublik.cpp" />
     <ClCompile Include="perangkatDesa.cpp" />
     <ClCompile Include="perangkatDesaReadOnly.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dataPenduduk.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="editDataAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="editDataWarga.h">
       <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="kirimPesan.h">
+      <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="lihatPesan.h">
       <FileType>CppForm</FileType>
@@ -152,7 +160,7 @@
     <ClInclude Include="menuAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="menuPublic.h">
+    <ClInclude Include="menuPublik.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="perangkatDesa.h">
@@ -163,11 +171,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="dataPenduduk.resx">
+      <DependentUpon>dataPenduduk.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editDataAdmin.resx">
       <DependentUpon>editDataAdmin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editDataWarga.resx">
       <DependentUpon>editDataWarga.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kirimPesan.resx">
+      <DependentUpon>kirimPesan.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lihatPesan.resx">
       <DependentUpon>lihatPesan.h</DependentUpon>
@@ -181,8 +195,8 @@
     <EmbeddedResource Include="menuAdmin.resx">
       <DependentUpon>menuAdmin.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menuPublic.resx">
-      <DependentUpon>menuPublic.h</DependentUpon>
+    <EmbeddedResource Include="menuPublik.resx">
+      <DependentUpon>menuPublik.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perangkatDesa.resx">
       <DependentUpon>perangkatDesa.h</DependentUpon>

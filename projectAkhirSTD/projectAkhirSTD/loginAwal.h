@@ -1,7 +1,7 @@
 #pragma once
 #include "loginAdmin.h"
-#include "menuPublic.h"
-#include "editDataWarga.h"
+#include "menuPublik.h"
+#include "menuAdmin.h"
 
 namespace projectAkhirSTD {
 
@@ -193,7 +193,7 @@ namespace projectAkhirSTD {
 	}
 	private: System::Void btnPublic_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		menuPublic^ menuPbl = gcnew menuPublic(this);
+		menuPublik^ menuPbl = gcnew menuPublik(this);
 		menuPbl->ShowDialog();
 	}
 private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
