@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="loginAwal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loginAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menuAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editDataAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editDataWarga.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lihatPesan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="perangkatDesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="perangkatDesaReadOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menuPublik.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kirimPesan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dataPenduduk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="informasiDesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pengumuman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editPengumuman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="detailDesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pendidikanDesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="budayaDesa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="detailDesaReadOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="budayaDesaReadOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aboutUs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pendidikanDesaReadOnly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="loginAwal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="loginAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editDataAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editDataWarga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lihatPesan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perangkatDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="perangkatDesaReadOnly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuPublik.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kirimPesan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dataPenduduk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="informasiDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pengumuman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="editPengumuman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detailDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pendidikanDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="budayaDesa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detailDesaReadOnly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="budayaDesaReadOnly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aboutUs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pendidikanDesaReadOnly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
