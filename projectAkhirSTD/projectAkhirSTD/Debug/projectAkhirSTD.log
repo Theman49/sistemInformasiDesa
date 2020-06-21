@@ -1,9 +1,0 @@
-﻿  loginAdmin.cpp
-  loginAwal.cpp
-C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\kirimPesan.h(208,1): warning C4353: nonstandard extension used: constant 0 as function expression.  Use '__noop' function intrinsic instead
-C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\kirimPesan.h(209,1): warning C4353: nonstandard extension used: constant 0 as function expression.  Use '__noop' function intrinsic instead
-C:\Users\HP\source\repos\projectAkhirSTD\projectAkhirSTD\loginAwal.cpp(7,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  menuAdmin.cpp
-  Generating Code...
-  dataPenduduk.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  projectAkhirSTD.vcxproj -> C:\Users\HP\source\repos\projectAkhirSTD\Debug\projectAkhirSTD.exe
