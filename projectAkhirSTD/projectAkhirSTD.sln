@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "projectAkhirSTD", "projectAkhirSTD\projectAkhirSTD.vcxproj", "{1F14B19A-1445-4734-981D-1F18CAE67551}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Install", "Install\Install.vdproj", "{93808B80-D26E-4F55-BD95-2FADEA6931BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{1F14B19A-1445-4734-981D-1F18CAE67551}.Release|x64.Build.0 = Release|x64
 		{1F14B19A-1445-4734-981D-1F18CAE67551}.Release|x86.ActiveCfg = Release|Win32
 		{1F14B19A-1445-4734-981D-1F18CAE67551}.Release|x86.Build.0 = Release|Win32
+		{93808B80-D26E-4F55-BD95-2FADEA6931BE}.Debug|x64.ActiveCfg = Debug
+		{93808B80-D26E-4F55-BD95-2FADEA6931BE}.Debug|x86.ActiveCfg = Debug
+		{93808B80-D26E-4F55-BD95-2FADEA6931BE}.Release|x64.ActiveCfg = Release
+		{93808B80-D26E-4F55-BD95-2FADEA6931BE}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

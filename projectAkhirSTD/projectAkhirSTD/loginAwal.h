@@ -11,6 +11,7 @@ namespace projectAkhirSTD {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for loginAwal
@@ -179,6 +180,7 @@ namespace projectAkhirSTD {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sistem Informasi Desa v1.0";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginAwal::loginAwal_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &loginAwal::loginAwal_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -200,12 +202,26 @@ private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System
 	Application::Exit();
 }
 private: System::Void loginAwal_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	if (MessageBox::Show("Apakah anda yakin keluar?", "Menu Public", MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+	if (MessageBox::Show("Apakah anda yakin keluar?", "Terima Kasih :)", MessageBoxButtons::YesNo, MessageBoxIcon::Question)
 		== System::Windows::Forms::DialogResult::Yes) {
 		Application::Exit();
 	}
 	else {
 		e->Cancel = true;
+	}
+}
+private: System::Void loginAwal_Load(System::Object^ sender, System::EventArgs^ e) {
+	String^ connectionInfo = L"datasource=localhost;port=3306;username=root;password=;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionInfo);
+	MySqlCommand^ connCmd = gcnew MySqlCommand("CREATE DATABASE sisteminformasidesa; CREATE TABLE sisteminformasidesa.admin(username varchar(20), password varchar(20)); CREATE TABLE sisteminformasidesa.detail(alamat text NOT NULL, luas varchar(30) NOT NULL, pencaharian text NOT NULL, sda text NOT NULL, url varchar(100)); CREATE TABLE sisteminformasidesa.foto(image1 varchar(200), image2 varchar(200), image3 varchar(200), image4 varchar(200)); CREATE TABLE sisteminformasidesa.pendidikan(sd text NOT NULL, smp text NOT NULL,	sma text NOT NULL, edukasi text NOT NULL); CREATE TABLE sisteminformasidesa.pengumuman(isi_pengumuman longtext, tanggal text); CREATE TABLE sisteminformasidesa.perangkat(kades varchar(30) PRIMARY KEY NOT NULL, kaur_umum varchar(30),	kaur_keuangan varchar(30), seksi_pemerintahan varchar(30), seksi_kesejahteraan varchar(30), kadus_satu varchar(30), kadus_dua varchar(30), kadus_tiga varchar(30)); CREATE TABLE sisteminformasidesa.pesan(ID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT, tanggal timestamp NOT NULL DEFAULT current_timestamp(), pengirim varchar(30), isi_pesan longtext); CREATE TABLE sisteminformasidesa.warga(nomor int(11) NOT NULL, nama_warga varchar(30) NOT NULL, NIK varchar(20) NOT NULL, jenkel varchar(10) NOT NULL, tempat_lahir varchar(15) NOT NULL, tanggal_lahir date NOT NULL, agama varchar(10) NOT NULL, pendidikan varchar(20) NOT NULL, jenis_pekerjaan varchar(20) NOT NULL, PRIMARY KEY(nomor, NIK)); INSERT INTO sisteminformasidesa.admin VALUES('struktur','data');INSERT INTO sisteminformasidesa.pengumuman (isi_pengumuman,tanggal) VALUES('tidak ada pengumuman', CURRENT_TIMESTAMP()); INSERT INTO sisteminformasidesa.detail VALUES('-','-','-','-','-'); INSERT INTO sisteminformasidesa.foto VALUES('-', '-', '-', '-'); INSERT INTO sisteminformasidesa.pendidikan VALUES('-', '-', '-', '-'); INSERT INTO sisteminformasidesa.perangkat VALUES('-', '-', '-', '-', '-', '-', '-', '-'); ", conn);
+	MySqlDataReader^ dataReader;
+
+	try {
+		conn->Open();
+		dataReader = connCmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
 	}
 }
 };
